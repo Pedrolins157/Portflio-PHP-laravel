@@ -26,25 +26,14 @@
 
             <div id="content" class="modo-diurno-body  checked-day-body">
 
-
                 @include('layout.parte.topbar')
 
                 <div class="container-fluid mb-5">
 
-                    <h2 class="">Dashboard</h2>
-                    <h5 class=" mb-4  "><b>Seja bem-vindo <?php /* echo $_SESSION["nome"] */ ?> !</b></h5>
+                 
 
-                    <div class="row mb-5 mt-5">
-                        <img src="img/farmacia-home.png" class="rounded mx-auto d-block" alt="...">
-                    </div>
-                    <div class="row  mt-5 d-flex justify-content-center align-content-center ">
-                        <div class="col-2  d-flex justify-content-center align-content-center"><a href="#"><img data-toggle="modal" data-target="#modalExemplo" src="img/vendas.png" alt="" class="btn-function d-flex form-control border-0 bg-gray-200 p-3 efeito" style="width:80px;height:80px;"></a>
-                        </div>
-                        <div class="col-2  d-flex justify-content-center align-content-center"><a href="#"><img id="entregas" src="img/delivery.png" alt="" class="btn-function d-flex form-control border-0 bg-gray-200 p-3  efeito" style="width:80px;height:80px;" value="Entregas"> </a>
-                        </div>
-                        <div class="col-2  d-flex justify-content-center align-content-center"><a href="#"><img src="img/historico.png" alt="" id="meuBotao" class="  btn-function d-flex form-control border-0 bg-gray-200 p-3 efeito" style="width:80px;height:80px;"></a>
-                        </div>
-                    </div>
+                    @yield('content')
+
                 </div>
             </div>
 
@@ -55,5 +44,5 @@
 
     </div>
 </body>
-
+@yield('js')
 </html>

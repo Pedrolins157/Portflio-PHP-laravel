@@ -13,11 +13,8 @@
         Navegação
     </div>
 
-
     <li class="nav-item">
-        <a class="nav-link" href="painel.php">
-            <i class="fas fa-home"></i>
-            <span>Home</span></a>
+        <a class="nav-link " href="{{url('/')}}"> <i class="fas fa-home"> </i> <span>Home</span> </a>
     </li>
 
     <!-- Divider -->
@@ -37,12 +34,12 @@
                 <h6 class="collapse-header">O que deseja fazer ?</h6>
 
                 <?php /*if ($_SESSION["perfil"] === "adm") { */?> 
-                 <a class="collapse-item" href="cadastrar-usuario.php">Cadastrar 
+                 <a class="collapse-item load-page" href="{{route('usuario.cadastrar')}}">Cadastrar 
                     Usuário</a><?php /*}*/ ?>
                 <?php /* if ($_SESSION["perfil"] === "adm") { ?> <a class="collapse-item" href="listar-usuarios.php">Listar
                     Usuários</a><?php }*/ ?>
                     
-                <a class="collapse-item" href="consultar-usuario.php">Consultar Usuários</a>
+                <a class="collapse-item load-page" href="{{route('usuario.consultar')}}">Consultar Usuários</a>
 
 
             </div>

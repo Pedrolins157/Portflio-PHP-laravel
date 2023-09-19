@@ -4,7 +4,7 @@
     </button>
     <ul class="navbar-nav ml-4 row">
         <li href="graficos.php" class="nav-item dropdown no-arrow ml-2  navbar-efect">
-            <a href="graficos.php" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button"><img src="img/graficos.png" class="mr-2"> Gráficos
+            <a href="graficos.php" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button"><img src="img/graficos.png" class="mr-2"> Ponto de venda
             </a>
         </li>
         <li class="nav-item  dropdown no-arrow ml-5 navbar-efect">
@@ -26,7 +26,7 @@
         <li class="nav-item dropdown no-arrow ml-5 mr-5 navbar-efect modo-diurno checked-day">
             <a class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/toque.png" class="mr-2">Aplicativo</a>
         </li>
-        <div class="principal" style="margin-left:285px;">
+        <div class="principal" style="margin-left:185px;">
             <div class=" main-button mt-3">
                 <input type="checkbox" id="toggle">
                 <label for="toggle" class="button-checked"></label>

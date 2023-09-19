@@ -87,3 +87,14 @@ $('#toggle').click(function() {
     }
 });
 
+$('.load-page').click( function () {
+
+    var href = $(this).attr('href');
+
+    $('.dashboard-body').load(href);
+
+    return false;
+});
+
+
+
