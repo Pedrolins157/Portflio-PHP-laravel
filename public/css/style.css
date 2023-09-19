@@ -1,0 +1,96 @@
+.main-button{
+    display: grid;
+    place-items: center;
+}
+#toggle{
+    display: none;
+
+}
+.button-checked{
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    top: 8px;
+}
+.modo-noturno {
+    background-color: #141824;
+    color: #f7f4f4!important;
+}
+.modo-noturno-a {
+    color: #f7f4f4!important;
+}
+.modo-diurno{
+    background-color:#e7e7ec;
+    color:rgb(97, 92, 92)!important;
+}
+.modo-noturno-body{
+    background-color: #0f111a;
+    color: #bbb8b8!important;
+}
+.modo-diurno-body{
+background-color: #eaecf475;
+color:rgb(97, 92, 92)!important;
+}
+
+.button-checked::after{
+    content: url('http://localhost/gerenciamento-atual/Projeto-gerenciamento-master/img/sol.png');
+    width: 32px;
+    height: 32px;
+    background-color: #0586f0;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0,.25);
+    position: absolute;
+    top: -4px;
+    left: 0;
+    display: grid;
+    place-content: center;
+    line-height: 0;
+    transition: background-color 1s, transform 0.3s ease-in;
+}
+#toggle:checked + .button-checked::after {
+    content:url('http://localhost/gerenciamento-atual/Projeto-gerenciamento-master/img/lua.png');
+    background-color: #2b007a;
+    transform: translateX(40px) rotate(360deg);
+}
+
+
+
+.form-control {
+    color: #700000;
+}
+.navbar-height{
+height: 7% !important;
+}
+.topbar-left-icon-user{
+    margin-left: 10px !important;
+}
+.grafic-ico i{
+    padding-bottom: -1px!important;
+}
+
+.efeito {
+    transition: all .15s ease-in-out!important;
+}
+.efeito:hover {
+    transform: scale(1.1)!important;
+}
+.card-1{
+   margin-top: 8%;
+}
+.card-inventario{
+    border-radius: 8px;
+    padding: 10px 10px;
+    background: #f4f4f4;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.btn-function{
+  padding: 10px 50px!important;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
