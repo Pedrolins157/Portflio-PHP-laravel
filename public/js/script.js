@@ -68,26 +68,34 @@ $(document).ready(function () {
         });
     });
 });
-$('#toggle').click(function() {
-    if ($(this).is(':checked')) {
+$(document).ready(function() {
+    // Verificar o estado no localStorage e aplicar classes correspondentes
+    if (localStorage.getItem('modoNoturno') === 'true') {
+        $('#toggle').prop('checked', true);
 
-        $('.checked-day').removeClass('modo-diurno');
+        $('.checked-day').removeClass('modo-diurno').addClass('modo-noturno');
         $('.checked-day-a').removeClass('text-gray-800');
-        $('.checked-day').addClass('modo-noturno');
-        $('.checked-day-body').removeClass('modo-diurno-body');
-        $('.checked-day-body').addClass('modo-noturno-body');
-        
-    } else {
-        $('.checked-day').removeClass('modo-noturno');
-        $('.checked-day').addClass('modo-diurno');
-        $('.checked-day-body').removeClass('modo-noturno-body');
-        $('.checked-day-body').addClass('modo-diurno-body');
-        $('.checked-day-a').addClass('text-gray-800');
-        
+        $('.checked-day-body').removeClass('modo-diurno-body').addClass('modo-noturno-body');
     }
-});
 
-$('.load-page').click( function () {
+    // Lidar com a mudança de estado do botão
+    $('#toggle').change(function() {
+        if ($(this).is(':checked')) {
+            // Atualizar classes e salvar estado no localStorage
+            $('.checked-day').removeClass('modo-diurno').addClass('modo-noturno');
+            $('.checked-day-a').removeClass('text-gray-800');
+            $('.checked-day-body').removeClass('modo-diurno-body').addClass('modo-noturno-body');
+            localStorage.setItem('modoNoturno', 'true');
+        } else {
+            // Atualizar classes e remover estado do localStorage
+            $('.checked-day').removeClass('modo-noturno').addClass('modo-diurno');
+            $('.checked-day-a').addClass('text-gray-800');
+            $('.checked-day-body').removeClass('modo-noturno-body').addClass('modo-diurno-body');
+            localStorage.removeItem('modoNoturno');
+        }
+    });
+});
+$('.load-page').click(function () {
 
     var href = $(this).attr('href');
 

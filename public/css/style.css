@@ -37,7 +37,7 @@ color:rgb(97, 92, 92)!important;
 }
 
 .button-checked::after{
-    content: url('http://localhost/gerenciamento-atual/Projeto-gerenciamento-master/img/sol.png');
+    content: url('http://127.0.0.1:8000/img/sol.png');
     width: 32px;
     height: 32px;
     background-color: #0586f0;
@@ -53,7 +53,7 @@ color:rgb(97, 92, 92)!important;
     transition: background-color 1s, transform 0.3s ease-in;
 }
 #toggle:checked + .button-checked::after {
-    content:url('http://localhost/gerenciamento-atual/Projeto-gerenciamento-master/img/lua.png');
+    content:url('http://127.0.0.1:8000/img/lua.png');
     background-color: #2b007a;
     transform: translateX(40px) rotate(360deg);
 }
