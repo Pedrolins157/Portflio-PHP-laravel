@@ -19,15 +19,11 @@ Route::get('/', function () {
 Route::get('teste', function () {
     return ('pagina-teste');
 });
-
 Route::prefix('usuario')->group(function () {
-   
     Route::get('cadastrar', function () {
         return view('usuario/cadastro-usuario');
     })->name('usuario.cadastrar');
-    
     Route::get('consultar', function() {
         return view('usuario/consulta-usuario');
     })->name('usuario.consultar');
-
 });
