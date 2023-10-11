@@ -6,7 +6,7 @@
                     <p class="h5 mb-2 mt-3 text-gray-800 ml-1  w-75 mx-auto ">Dados do Usuário</p>
 
                     <!-- enctype="multipart/form-data habilita o form a enviar arquivo -->
-                    <form action="gravar-usuario.php" class="w-75 mx-auto" method="post" autocomplete="off"
+                    <form action="" class="w-75 mx-auto" method="post" autocomplete="off"
                         enctype="multipart/form-data">
                         <div class="row">
                             <!-- Nome & e-mail -->
@@ -19,7 +19,7 @@
                             </div>
                             <!--data nascimento & cpf & foto -->
                             <div class="col-md-4">
-                                <input type="text" name="dtnasc" id="data" placeholder="Data de Nascimento"
+                                <input type="text" name="data_nascimento" id="data" placeholder="Data de Nascimento"
                                     class="form-control mb-2">
                             </div>
 

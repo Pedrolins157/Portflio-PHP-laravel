@@ -12,7 +12,7 @@ class User extends Model
     protected $fillable = [
         'nome',
         'email',
-        'dtnasc',
+        'data_nascimento',
         'cpf',
         'foto',
         'login',
