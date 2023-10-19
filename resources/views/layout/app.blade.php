@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
@@ -30,7 +32,7 @@
 
                 <div class="container-fluid mb-5">
 
-                 
+
 
                     @yield('content')
 
@@ -45,4 +47,5 @@
     </div>
 </body>
 @yield('js')
+
 </html>
