@@ -59,8 +59,8 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">O que deseja fazer ?</h6>
-                <a class="collapse-item" href="cadastrar-cliente.php">Cadastrar Cliente</a>
-                <a class="collapse-item" href="consultar-cliente.php">Consultar Clientes</a>
+                <a class="collapse-item load-page" href="{{route('cliente.cadastrar')}}">Cadastrar Cliente</a>
+                <a class="collapse-item load-page" href="{{route('cliente.consultar')}}">Consultar Clientes</a>
             </div>
         </div>
     </li>

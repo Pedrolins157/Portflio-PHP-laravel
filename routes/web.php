@@ -23,7 +23,21 @@ Route::prefix('usuario')->group(function () {
     Route::get('cadastrar', function () {
         return view('usuario/cadastro-usuario');
     })->name('usuario.cadastrar');
+
     Route::get('consultar', function () {
         return view('usuario/consulta-usuario');
     })->name('usuario.consultar');
+
+});
+
+Route::prefix('cliente')->group(function (){
+    
+    Route::get('cadastrar', function () {
+        return view('cliente/cadastrar-cliente');
+    })->name('cliente.cadastrar');
+
+    Route::get('consultar', function () {
+        return view('cliente/consultar-cliente');
+    })->name('cliente.consultar');
+
 });

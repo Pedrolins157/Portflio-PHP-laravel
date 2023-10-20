@@ -10,8 +10,8 @@
         <div class="container">
             <div class="row mb-4 mx-auto">
 
-                <div class="box">
-                    <label class="avatar" for="btn">
+                <div class="box col-12 mt-5">
+                    <label class="avatar avatar01" for="btn">
                         <img src="img/perfil-usuario.jpg" style="width:150px;left:150px;" alt="">
                         
                     </label>
@@ -26,7 +26,7 @@
                 <!-- <input type="file" name="foto" placeholder="foto perfil" class="form-control-file mb-2 mt-1" accept="png,jpg,jpeg"> -->
                 
             </div>
-            <p class="h5 d-flex align-items-center justify-content-center">Adicionar foto</p>
+            <p class="h5 d-flex align-items-center justify-content-center "><b><i class=" far fa-images"></i> Adicionar Foto </b></p>
             <div class="row">
                 <p class="h5  mt-3 text-gray-800 ml-3">Dados do Usuário</p>
             </div>
@@ -82,8 +82,8 @@
                 <div class="col-md-4">
                     <input type="text" class="form-control mb-2" id="cidade" placeholder="Cidade" name="cidade">
                 </div>
-                <div class="col-md-1">
-                    <input type="text" class="form-control mb-2" id="uf" placeholder="Uf" name="uf">
+                <div class="col-md-3 w-auto">
+                    <input type="text" class="form-control mb-2 w-50" id="uf" placeholder="Uf" name="uf">
                 </div>
             </div>
         </div>
