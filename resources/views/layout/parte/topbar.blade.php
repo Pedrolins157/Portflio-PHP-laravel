@@ -3,8 +3,8 @@
         <i class="fa fa-bars"></i>
     </button>
     <ul class="navbar-nav ml-4 row">
-        <li href="graficos.php" class="nav-item dropdown no-arrow ml-2  navbar-efect">
-            <a href="graficos.php" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button"><img src="img/graficos.png" class="mr-2"> Ponto de venda
+        <li href="" class="nav-item dropdown no-arrow ml-2  navbar-efect">
+            <a href="{{route('ponto.de.venda')}}" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button"><img src="img/ponto-venda.png" class="mr-2" style="width:32px;height:32px;"> Ponto de venda
             </a>
         </li>
         <li class="nav-item  dropdown no-arrow ml-5 navbar-efect">
