@@ -21,14 +21,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix('user')->group(function (){
   Route::post('index', [\App\Http\Controllers\Api\UserController::class,'index'])->name('api.users.index');
   Route::post('create', [\App\Http\Controllers\Api\UserController::class,'create'])->name('api.users.create');
-  Route::post('update', [\App\Http\Controllers\Api\UserController::class,'update'])->name('api.users.update');
+  Route::post('update/{user}', [\App\Http\Controllers\Api\UserController::class,'update'])->name('api.users.update');
   Route::delete('delete/{id}', [\App\Http\Controllers\Api\UserController::class,'delete'])->name('api.users.delete');
 });
 
 Route::prefix('client')->group(function (){
   Route::post('index', [\App\Http\Controllers\Api\ClientController::class,'index'])->name('api.clients.index');
   Route::post('create', [\App\Http\Controllers\Api\ClientController::class,'create'])->name('api.clients.create');
-  Route::post('update', [\App\Http\Controllers\Api\ClientController::class,'update'])->name('api.clients.update');
+  Route::post('update/{user}', [\App\Http\Controllers\Api\ClientController::class,'update'])->name('api.clients.update');
   Route::delete('delete/{id}', [\App\Http\Controllers\Api\ClientController::class,'delete'])->name('api.clients.delete');
 });
 

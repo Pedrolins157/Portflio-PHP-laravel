@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\CreateClientRequest;
+use App\Http\Requests\UpdateClientRequest
 use App\Http\Controllers\Controller;
 use App\Models\Client;
 use Illuminate\Http\Request;
@@ -15,13 +17,8 @@ class ClientController extends Controller
     
     public function create(Request $request)
     {
-        $client = new Client();
-    
-        $client = $this->setData($client, $request);
-    
-        $client->save();
-    
-        return $client;
+        
+        return Client::create($request->all());   
     }
     
     public function update(Request $request)
