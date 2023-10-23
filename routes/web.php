@@ -41,3 +41,6 @@ Route::prefix('cliente')->group(function (){
     })->name('cliente.consultar');
 
 });
+route::get('pdv', function () {
+    return view('pdv');
+})->name('ponto.de.venda');
