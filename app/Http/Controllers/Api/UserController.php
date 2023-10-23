@@ -17,12 +17,13 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
+
         $user = new User();
 
         $user = $this->setData($user, $request);
 
         $user->save();
-        
+
         return $user;
     }
 
@@ -44,7 +45,7 @@ class UserController extends Controller
         $user = new User();
 
         $user = $user->find($request->id);
-     
+
         $user->delete();
 
     }
@@ -60,7 +61,7 @@ class UserController extends Controller
         $user->senha = $request->senha;
         $user->perfil = $request->perfil;
 
-        return $user;        
+        return $user;
     }
 
 

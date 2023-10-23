@@ -5,7 +5,7 @@
                 <label class="avatar" for="btn">
                     <img src="img/perfil-usuario.jpg" style="width:150px;left:150px;" alt="">
                 </label>
-                
+
             </div>
         </div>
         <div class="row d-flex justify-content-center align-content-center mb-3">
@@ -19,7 +19,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">usuário</a>
+                        <a class="dropdown-item" href="#">Usuário</a>
                         <a class="dropdown-item" href="#">Administrador</a>
 
                     </div>
