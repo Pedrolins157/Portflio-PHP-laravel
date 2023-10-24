@@ -104,5 +104,12 @@ $('.load-page').click(function () {
     return false;
 });
 
+function formatarMoeda(input) {
+    // Remove caracteres não numéricos
+    input.value = input.value.replace(/\D/g, "");
+    
+    // Formata o valor para o formato de moeda (00,00)
+    input.value = input.value.replace(/(\d{2})(\d{2})$/, "$1,$2");
+}
 
 

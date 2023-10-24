@@ -3,10 +3,11 @@
         <i class="fa fa-bars"></i>
     </button>
     <ul class="navbar-nav ml-4 row">
-        <li href="" class="nav-item dropdown no-arrow ml-2  navbar-efect">
-            <a href="{{route('ponto.de.venda')}}" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button"><img src="img/ponto-venda.png" class="mr-2" style="width:32px;height:32px;"> Ponto de venda
+        <li href="" class="nav-item dropdown no-arrow ml-2   navbar-efect">
+            <a href="{{route('ponto.de.venda')}}" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button" data-toggle="modal" data-target="#ExemploModalCentralizado"><img src="img/ponto-venda.png" class="mr-2" style="width:32px;height:32px;"> Ponto de venda 
             </a>
         </li>
+
         <li class="nav-item  dropdown no-arrow ml-5 navbar-efect">
             <a class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a" id="userDropdown " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/financa.png" class="mr-2">Financeiro
             </a>
@@ -37,7 +38,7 @@
         <li class="nav-item dropdown no-arrow  col align-self-end modo-diurno checked-day" style="margin-left:48px;">
             <a class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none  d-lg-inline  small  ">Olá,
-                    <?php /* echo $_SESSION["nome"] */?>
+                    <?php /* echo $_SESSION["nome"] */ ?>
                 </span>
                 <img class="img-profile rounded-circle" src="img/<?php /* echo $_SESSION["foto"]; */ ?>">
             </a>
