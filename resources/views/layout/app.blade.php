@@ -37,10 +37,12 @@
 
                 </div>
             </div>
-
+ 
             @include('layout.parte.footer')
             @include('layout.modal.modal')
 
+
+            
         </div>
 
     </div>

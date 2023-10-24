@@ -2,18 +2,16 @@
 
     <!-- Page Heading -->
 
-
-
-
     <!-- enctype="multipart/form-data habilita o form a enviar arquivo -->
-    <form action="" class="w-50 mx-auto" method="post" autocomplete="off" enctype="multipart/form-data">
+    <form action="{{ route('api.users.create') }}" class="w-50 mx-auto" method="post" autocomplete="off" enctype="multipart/form-data">
+        @csrf
         <div class="container">
             <div class="row mb-4 mx-auto">
 
                 <div class="box col-12 mt-5">
                     <label class="avatar avatar01" for="btn">
                         <img src="img/perfil-usuario.jpg" style="width:150px;left:150px;" alt="">
-                        
+
                     </label>
                     <input type="checkbox" id="btn">
                     <div class="menu">
@@ -21,10 +19,10 @@
                         <br>
                         <a href="#"><i class="fa fa-edit"> <span>edite</span></i></a>
                     </div>
-                    
+
                 </div>
                 <!-- <input type="file" name="foto" placeholder="foto perfil" class="form-control-file mb-2 mt-1" accept="png,jpg,jpeg"> -->
-                
+
             </div>
             <p class="h5 d-flex align-items-center justify-content-center "><b><i class=" far fa-images"></i> Adicionar Foto </b></p>
             <div class="row">
@@ -39,10 +37,10 @@
                 </div>
 
                 <div class="col-md-4">
-                    <input type="text" name="data_nascimento" id="data" placeholder="Data de Nascimento" class="form-control mb-2">
+                    <input type="date" name="data_nascimento" id="data" placeholder="Data de Nascimento" class="form-control mb-2">
                 </div>
                 <div class="col-md-4">
-                    <input type="text" name="cpf" placeholder="Cpf" id="cpf" class="form-control mb-2">
+                    <input type="text" name="cpf" id="cpf" class="form-control mb-2" placeholder="Cpf">
                     <spam id="errocpf"></spam>
                 </div>
                 <div class="col-md-4">
@@ -65,10 +63,10 @@
             </div>
             <div class="row mt-3">
                 <div class="col-md-12">
-                    <input type="text" class="form-control mb-2" placeholder="Cep" id="cep" name="cep">
+                    <input type="text" class="form-control mb-2" id="logradouro" placeholder="Logradouro" name="logradouro">
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="form-control mb-2" id="logradouro" placeholder="Logradouro" name="logradouro">
+                    <input type="text" class="form-control mb-2" placeholder="Cep" id="cep" name="cep">
                 </div>
                 <div class="col-md-2">
                     <input type="text" class="form-control mb-2" id="numero" placeholder="Numero" name="numero">
@@ -88,10 +86,15 @@
             </div>
         </div>
         <div class="row">
-            <button id="btn-cadastrar-usuario" class="form-control btn-cadastrar-usuario col-md-4 ml-3 mt-2 text-light  w-75 mx-auto">Realizar
+            <button id="btn-cadastrar-usuario" class="format-cpf form-control btn-cadastrar-usuario col-md-4 ml-3 mt-2 text-light  w-75 mx-auto">Realizar
                 Cadastro
             </button>
         </div>
     </form>
 
+
 </div>
+<script>
+    urlCreateUser = '{{ route("api.users.create") }}';
+</script>
+<script src="{{url('js/formUser.js')}}"></script>

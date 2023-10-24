@@ -68,7 +68,8 @@ $(document).ready(function () {
         });
     });
 });
-$(document).ready(function() {
+
+$(document).ready(function () {
     // Verificar o estado no localStorage e aplicar classes correspondentes
     if (localStorage.getItem('modoNoturno') === 'true') {
         $('#toggle').prop('checked', true);
@@ -79,7 +80,7 @@ $(document).ready(function() {
     }
 
     // Lidar com a mudança de estado do botão
-    $('#toggle').change(function() {
+    $('#toggle').change(function () {
         if ($(this).is(':checked')) {
             // Atualizar classes e salvar estado no localStorage
             $('.checked-day').removeClass('modo-diurno').addClass('modo-noturno');
@@ -107,9 +108,51 @@ $('.load-page').click(function () {
 function formatarMoeda(input) {
     // Remove caracteres não numéricos
     input.value = input.value.replace(/\D/g, "");
-    
+
     // Formata o valor para o formato de moeda (00,00)
     input.value = input.value.replace(/(\d{2})(\d{2})$/, "$1,$2");
 }
+// cadastramento de Usuário
 
 
+function mascaraCpf(element) {
+    // mascara CPF
+    element.on('input', function () {
+        var value = $(this).val().replace(/\D/g, '');
+        if (value.length > 11) {
+            value = value.substring(0, 11);
+        }
+        var formattedValue = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+        $(this).val(formattedValue);
+    });
+
+    element.on('blur', function () {
+        var unmaskedValue = $(this).val().replace(/\D/g, '');
+        if (unmaskedValue.length === 11) {
+            console.log("CPF válido: " + unmaskedValue);
+        } else {
+            console.log("CPF inválido.");
+        }
+    });
+}
+
+function mascaraCep(element) {
+    //mascara cep
+    element.on('input', function () {
+        var value = $(this).val().replace(/\D/g, '');
+        if (value.length > 8) {
+            value = value.substring(0, 8);
+        }
+        var formattedValue = value.replace(/(\d{5})(\d{3})/, "$1-$2");
+        $(this).val(formattedValue);
+    });
+}
+
+    // mascara uf
+    $('#uf').on('input', function () {
+        var value = $(this).val().toUpperCase(); // Converte para maiúsculas
+        if (value.length > 2) {
+            value = value.substring(0, 2); // Limita a 2 letras
+        }
+        $(this).val(value); // Atualiza o valor no campo
+    });

@@ -15,6 +15,14 @@ class CreateUserRequest extends FormRequest
     {
         return true;
     }
+    public function prepareForValidation()
+    {
+        
+        $this->request->set(str_replace(['.','-'],"", $this->cpf), 'cpf');
+
+        dd($this->all());
+    }
+
 
     /**
      * Get the validation rules that apply to the request.
