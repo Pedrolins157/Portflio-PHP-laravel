@@ -61,6 +61,9 @@ color:rgb(97, 92, 92)!important;
     background-image: linear-gradient(to right, #002c62, #4300a8a6);
    
 }
+.input-pdv{
+    height: 30px;
+}
 
 
 .form-control {
