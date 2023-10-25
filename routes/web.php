@@ -30,8 +30,8 @@ Route::prefix('usuario')->group(function () {
 
 });
 
-Route::prefix('cliente')->group(function (){
-    
+Route::prefix('cliente')->group(function () {
+
     Route::get('cadastrar', function () {
         return view('cliente/cadastrar-cliente');
     })->name('cliente.cadastrar');
@@ -41,6 +41,6 @@ Route::prefix('cliente')->group(function (){
     })->name('cliente.consultar');
 
 });
-route::get('pdv', function () {
-    return view('pdv');
+route::get('caixa', function () {
+    return view('caixa/pdv');
 })->name('ponto.de.venda');

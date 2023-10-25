@@ -17,12 +17,12 @@ class CreateUserRequest extends FormRequest
     }
     public function prepareForValidation()
     {
-        
-        $this->request->set(str_replace(['.','-'],"", $this->cpf), 'cpf');
+        $cpf = $this->input('cpf');
 
-        dd($this->all());
+        $cpfSemPontosTraços = str_replace(['.', '-'], '', $cpf);
+        //dd($cpfSemPontosTraços);
+        $this->merge(['cpf' => $cpfSemPontosTraços]);
     }
-
 
     /**
      * Get the validation rules that apply to the request.

@@ -129,11 +129,24 @@ function mascaraCpf(element) {
     element.on('blur', function () {
         var unmaskedValue = $(this).val().replace(/\D/g, '');
         if (unmaskedValue.length === 11) {
-            console.log("CPF válido: " + unmaskedValue);
+            if (validaCPF(unmaskedValue)) {
+                $(this).removeClass('is-invalid');
+                $('#cpfError').text('');
+            } else {
+                $(this).addClass('is-invalid');
+                $('#cpfError').text('CPF inválido');
+            }
         } else {
-            console.log("CPF inválido.");
+            $(this).removeClass('is-invalid');
+            $('#cpfError').text('');
         }
     });
+
+    function validaCPF(cpf) {
+        cpf = cpf.replace(/[^\d]+/g, '');
+        if (cpf.length != 11 || /^(.)\1{10}$/.test(cpf)) return false;
+        return true;
+    }
 }
 
 function mascaraCep(element) {
