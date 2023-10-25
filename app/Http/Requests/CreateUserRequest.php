@@ -18,9 +18,10 @@ class CreateUserRequest extends FormRequest
     public function prepareForValidation()
     {
         
-        $this->request->set(str_replace(['.','-'],"", $this->cpf), 'cpf');
+        $cpf = $this->input('cpf'); 
+        $cpf = str_replace(['.', '-'], '', $cpf); 
+        $this->merge(['cpf'=>$cpf]); 
 
-        dd($this->all());
     }
 
 
