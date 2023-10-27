@@ -38,9 +38,9 @@
 
                 <div class="col-md-4">
                     <input type="date" name="data_nascimento" id="data" placeholder="Data de Nascimento" class="form-control mb-2">
-                </div>
+                </div>maxlength="11"
                 <div class="col-md-4">
-                    <input type="text" name="cpf" id="cpf" class="form-control mb-2" placeholder="Cpf">
+                    <input type="text" name="cpf" id="cpf" class="cpf form-control mb-2" placeholder="Cpf">
                     <spam id="errocpf"></spam>
                 </div>
                 <div class="col-md-4">
