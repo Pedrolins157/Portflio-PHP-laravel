@@ -13,9 +13,16 @@ class CreateClientRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
+    public function prepareForValidation()
+    {
+        
+        $cpf = $this->input('cpf'); 
+        $cpf = str_replace(['.', '-'], '', $cpf); 
+        $this->merge(['cpf'=>$cpf]); 
 
+    }
     /**
      * Get the validation rules that apply to the request.
      *

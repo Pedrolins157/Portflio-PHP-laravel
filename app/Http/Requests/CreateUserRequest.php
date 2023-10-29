@@ -22,6 +22,13 @@ class CreateUserRequest extends FormRequest
         $cpfSemPontosTraços = str_replace(['.', '-'], '', $cpf);
         //dd($cpfSemPontosTraços);
         $this->merge(['cpf' => $cpfSemPontosTraços]);
+
+
+        $cpf = $this->input('cpf');
+        $cpf = str_replace(['.', '-'], '', $cpf);
+        $this->merge(['cpf'=>$cpf]);
+
+// b3e6fd84adbe533cdb379c1130a4ee5062ccf649
     }
 
     /**

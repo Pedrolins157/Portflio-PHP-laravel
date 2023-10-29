@@ -10,11 +10,11 @@
 
         <!-- Dados do Form:Nome,E-mail,Cpf,Estado Civil -->
         <div class="row d-flex justify-content-center align-content-center">
-            <form action="gravar-cliente.php" autocomplete="off" class="w-50 mb-2 " method="post">
-
+            <form action="{{ route('api.clients.create') }}" autocomplete="off" class="w-50 mb-2 " method="post">
+            @csrf
                 <input type="text" require Placeholder="Nome do cliente" name="nome" class="mb-2 form-control">
                 <input type="email" require Placeholder="Email do cliente" name="email" class="mb-2 form-control">
-                <input type="text" require maxlength="11" Placeholder="Cpf do Cliente" name="cpf" class="mb-2 form-control">
+                <input type="text" require  Placeholder="Cpf do Cliente" name="cpf" class="cpf mb-2 form-control">
                 <div class="row">
                     <div class="col-8">
                         <select name="estadocivil" required class="form-control mb-3">
@@ -34,3 +34,5 @@
         </div>
     </div>
 </div>
+<script>  urlCreateClient = '{{ route("api.clients.create") }}';</script>
+<script src="{{url('js/formClient.js')}}"></script>
