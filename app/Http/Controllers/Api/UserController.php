@@ -12,11 +12,16 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
+        $perfil = $request->get('perfil');
 
-       return User::all() ;
-
+        if ($perfil === 'adm' || $perfil === 'user') {
+            $users = User::where('perfil', $perfil)->get();
+            return $users;
+        } else {
+            $users = User::all();
+            return $users;
+        }
     }
-
     public function create(CreateUserRequest $request)
     {
         return User::create($request->all());

@@ -1,4 +1,4 @@
-<div class="container-fluid ">
+<div class="container-fluid mt-5">
 
     <!-- Page Heading -->
 
@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row mb-4 mx-auto">
 
-                <div class="box col-12 mt-5">
+                <div class="box col-12 "style="margin-top: 100px">
                     <label class="avatar avatar01" for="btn">
                         <img src="img/perfil-usuario.jpg" style="width:150px;left:150px;" alt="">
 
@@ -38,10 +38,8 @@
 
                 <div class="col-md-4">
                     <input type="date" name="data_nascimento" id="data" placeholder="Data de Nascimento" class="form-control mb-2">
-                </div>maxlength="11"
+                </div>
                 <div class="col-md-4">
-                    <input type="text" name="cpf" id="cpf" class="form-control mb-2"  placeholder="Cpf" >
-                    <small id="cpfError" class="text-danger"></small>
 
                     <input type="text" name="cpf" id="cpf" class="cpf form-control mb-2" placeholder="Cpf">
                     <spam id="errocpf"></spam>
@@ -62,34 +60,9 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
-                <p class="h5  mt-3 text-gray-800 ml-3">Endereço do Usuário</p>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <input type="text" class="form-control mb-2" id="logradouro" placeholder="Logradouro" name="logradouro">
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control mb-2" placeholder="Cep" id="cep" name="cep">
-                </div>
-                <div class="col-md-2">
-                    <input type="text" class="form-control mb-2" id="numero" placeholder="Numero" name="numero">
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control mb-2" placeholder="Complemento" name="complemento">
-                </div>
-                <div class="col-md-2">
-                    <input type="text" class="form-control mb-2" id="bairro" placeholder="Bairro" name="bairro">
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control mb-2" id="cidade" placeholder="Cidade" name="cidade">
-                </div>
-                <div class="col-md-3 w-auto">
-                    <input type="text" class="form-control mb-2 w-50" id="uf" placeholder="Uf" name="uf">
-                </div>
-            </div>
+
         </div>
-        <div class="row">
+        <div class="row mt-5">
             <button id="btn-cadastrar-usuario" class="format-cpf form-control btn-cadastrar-usuario col-md-4 ml-3 mt-2 text-light  w-75 mx-auto">Realizar
                 Cadastro
             </button>
@@ -98,7 +71,5 @@
 
 
 </div>
-<script>
-    urlCreateUser = '{{ route("api.users.create") }}';
-</script>
+<script>urlCreateUser = '{{ route("api.users.create") }}';</script>
 <script src="{{url('js/formUser.js')}}"></script>
