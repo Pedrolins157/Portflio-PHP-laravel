@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->char('cpf', 14);
             $table->string('foto', 64)->nullable();
             $table->string('login', 30)->unique();
-            $table->char('senha', 32);
+            $table->char('senha', 255);
             $table->enum('perfil', ['adm', 'user']);
             $table->timestamps();
         });

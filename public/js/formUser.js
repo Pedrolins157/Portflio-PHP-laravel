@@ -11,7 +11,18 @@ $('form').submit(function (data) {
         url: urlCreateUser,
         data: form.serialize(),
         success: function (response) {
-            console.log(response);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Cadastro realizado com Sucesso!',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                const form = document.getElementById('form_user');
+                if (form) {
+                    form.reset();
+                }
+            });
         },
         error: function (error) {
             console.log(error);
@@ -35,16 +46,17 @@ $(document).ready(function () {
 
     $('#btn-realizar-busca').on('click', function (event) {
         event.preventDefault();
-        var buscar = $('#nome').val(); // Ignorando a busca por nome
+        var buscar = $('#nome').val();
 
         if (!buscar) {
             var perfil = $('#dropdownMenuLink').text().toLowerCase(); // Obtém o perfil selecionado
 
-            if (perfil === 'user' || perfil === 'adm') {
-                realizarBusca(perfil); // Chama a função realizarBusca com o perfil selecionado
-            } else {
-                $('#resultado').html(''); // Limpa a tabela se nenhum perfil for selecionado
-            }
+           alert(perfil);
+            // if (perfil === 'user' || perfil === 'adm') {
+            //     realizarBusca(perfil); // Chama a função realizarBusca com o perfil selecionado
+            // } else {
+            //     $('#resultado').html(''); // Limpa a tabela se nenhum perfil for selecionado
+            // }
         } else {
             $('#resultado').html(''); // Limpa a tabela se algo for digitado na busca
         }

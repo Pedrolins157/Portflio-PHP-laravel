@@ -16,8 +16,8 @@
                     Perfil
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a id="user" class="dropdown-item" href="#">Usuário</a>
-                    <a id="adm" class="dropdown-item" href="#">Administrador</a>
+                    <a id="user" class="dropdown-item" href="#" value="user">Vendedor</a>
+                    <a id="adm" class="dropdown-item" href="#" value="adm">Administrador</a>
                 </div>
             </div>
             <div class="col-4 d-flex justify-content-between p-0">

@@ -3,7 +3,7 @@
     <!-- Page Heading -->
 
     <!-- enctype="multipart/form-data habilita o form a enviar arquivo -->
-    <form action="{{ route('api.users.create') }}" class="w-50 mx-auto" method="post" autocomplete="off" enctype="multipart/form-data">
+    <form action="{{ route('api.users.create') }}" id="form_user" class="w-50 mx-auto" method="post" autocomplete="off" enctype="multipart/form-data">
         @csrf
         <div class="container">
             <div class="row mb-4 mx-auto">
