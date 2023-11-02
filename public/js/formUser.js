@@ -36,8 +36,7 @@ $(document).ready(function () {
         var perfilSelecionado = $(this).text().toLowerCase(); // Obtém o perfil selecionado
         $('#dropdownMenuLink').text(perfilSelecionado); // Atualiza o texto do dropdown
 
-        if (perfilSelecionado === 'user' || perfilSelecionado === 'adm') {
-            // Se o perfil selecionado for 'usuário' ou 'administrador', realiza a busca
+        if (perfilSelecionado === 'usuário' || perfilSelecionado === 'administrador') {
             realizarBusca(perfilSelecionado); // Chama a função realizarBusca com o perfil selecionado
         } else {
             $('#resultado').html(''); // Limpa a tabela se nenhum perfil for selecionado
@@ -49,14 +48,12 @@ $(document).ready(function () {
         var buscar = $('#nome').val();
 
         if (!buscar) {
-            var perfil = $('#dropdownMenuLink').text().toLowerCase(); // Obtém o perfil selecionado
-
-           alert(perfil);
-            // if (perfil === 'user' || perfil === 'adm') {
-            //     realizarBusca(perfil); // Chama a função realizarBusca com o perfil selecionado
-            // } else {
-            //     $('#resultado').html(''); // Limpa a tabela se nenhum perfil for selecionado
-            // }
+            var perfil = $('#dropdownMenuLink').text().toLowerCase();
+            if (perfil === 'user' || perfil === 'adm') {
+                realizarBusca(perfil); // Chama a função realizarBusca com o perfil selecionado
+            } else {
+                $('#resultado').html(''); // Limpa a tabela se nenhum perfil for selecionado
+            }
         } else {
             $('#resultado').html(''); // Limpa a tabela se algo for digitado na busca
         }
