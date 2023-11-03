@@ -28,7 +28,7 @@ class CreateUserRequest extends FormRequest
         $cpf = str_replace(['.', '-'], '', $cpf);
         $this->merge(['cpf'=>$cpf]);
 
-// b3e6fd84adbe533cdb379c1130a4ee5062ccf649
+// b3e6fd84a\dbe533cdb379c1130a4ee5062ccf649
     }
 
     /**
@@ -43,7 +43,7 @@ class CreateUserRequest extends FormRequest
             'email' => 'required|email|unique:users',
             'data_nascimento' => 'required|date',
             'cpf' => 'required|string|size:11|unique:users',
-            'foto' => 'nullable|string|max:64',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'login' => 'required|string|max:30|unique:users',
             'senha' => 'required|string|min:8',
             'perfil' => 'required|in:adm,user',
@@ -61,7 +61,8 @@ class CreateUserRequest extends FormRequest
             'cpf.required' => 'O campo CPF é obrigatório.',
             'cpf.size' => 'O CPF deve ter 14 caracteres.',
             'cpf.unique' => 'Este CPF já está em uso.',
-            'foto.max' => 'A foto não deve ter mais de 64 caracteres.',
+            'foto.max' => 'A foto não deve ter mais de 255 caracteres.',
+            'foto.required' => 'Foto não selecionada.',
             'login.required' => 'O campo login é obrigatório.',
             'login.max' => 'O login não deve ter mais de 30 caracteres.',
             'login.unique' => 'Este login já está em uso.',

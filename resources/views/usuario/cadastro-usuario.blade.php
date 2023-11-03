@@ -7,20 +7,14 @@
         @csrf
         <div class="container">
             <div class="row mb-4 mx-auto">
+                <input type="file" id="photo-input" name="foto"  accept="jpg,jpeg,png">
+{{--                <div class="box col-12" style="margin-top: 100px">--}}
+{{--                    <label class="avatar avatar01" for="photo-input">--}}
+{{--                        <img id="avatar-image" src="img/perfil-usuario.jpg" style="width: 150px; left: 150px;" alt="Avatar">--}}
+{{--                    </label>--}}
+{{--                  --}}
 
-                <div class="box col-12 "style="margin-top: 100px">
-                    <label class="avatar avatar01" for="btn">
-                        <img src="img/perfil-usuario.jpg" style="width:150px;left:150px;" alt="">
-
-                    </label>
-                    <input type="checkbox" id="btn">
-                    <div class="menu">
-                        <a href="#"><i class="fa fa-upload"> <span>upload</span></i></a>
-                        <br>
-                        <a href="#"><i class="fa fa-edit"> <span>edite</span></i></a>
-                    </div>
-
-                </div>
+{{--                </div>--}}
                 <!-- <input type="file" name="foto" placeholder="foto perfil" class="form-control-file mb-2 mt-1" accept="png,jpg,jpeg"> -->
 
             </div>

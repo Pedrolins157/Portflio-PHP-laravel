@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 50)->unique();
             $table->date('data_nascimento');
             $table->char('cpf', 14);
-            $table->string('foto', 64)->nullable();
+            $table->string('foto', 255);
             $table->string('login', 30)->unique();
             $table->char('senha', 255);
             $table->enum('perfil', ['adm', 'user']);

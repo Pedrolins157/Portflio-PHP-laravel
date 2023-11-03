@@ -2,6 +2,20 @@ mascaraCpf($('.cpf'));
 
 mascaraCep($('#cep'));
 
+// $(document).ready(function() {
+//     $('#photo-input').change(function() {
+//         var file = this.files[0];
+//         var reader = new FileReader();
+//
+//         reader.onload = function(e) {
+//             $('#avatar-image').attr('src', e.target.result);
+//         };
+//
+//         if (file) {
+//             reader.readAsDataURL(file);
+//         }
+//     });
+// });
 
 $('form').submit(function (data) {
     data.preventDefault();
@@ -32,43 +46,39 @@ $('form').submit(function (data) {
     return false;
 });
 $(document).ready(function () {
-    $('.dropdown-item').on('click', function() {
-        var perfilSelecionado = $(this).text().toLowerCase(); // Obtém o perfil selecionado
-        $('#dropdownMenuLink').text(perfilSelecionado); // Atualiza o texto do dropdown
+    $('.dropdown-item').on('click', function () {
+        var perfilSelecionado = $(this).text().toLowerCase();
 
-        if (perfilSelecionado === 'usuário' || perfilSelecionado === 'administrador') {
-            realizarBusca(perfilSelecionado); // Chama a função realizarBusca com o perfil selecionado
-        } else {
-            $('#resultado').html(''); // Limpa a tabela se nenhum perfil for selecionado
+        $('#dropdownMenuLink').text(perfilSelecionado);
+
+        if (perfilSelecionado === 'vendedor') {
+            perfilSelecionado = ('user');
+            realizarBusca(perfilSelecionado);
+        } else if (perfilSelecionado === 'administrador') {
+            perfilSelecionado = ('adm');
+            realizarBusca(perfilSelecionado);
+        } else  {
+            realizarBusca( '');
         }
     });
-
-    $('#btn-realizar-busca').on('click', function (event) {
-        event.preventDefault();
-        var buscar = $('#nome').val();
-
-        if (!buscar) {
-            var perfil = $('#dropdownMenuLink').text().toLowerCase();
-            if (perfil === 'user' || perfil === 'adm') {
-                realizarBusca(perfil); // Chama a função realizarBusca com o perfil selecionado
-            } else {
-                $('#resultado').html(''); // Limpa a tabela se nenhum perfil for selecionado
-            }
-        } else {
-            $('#resultado').html(''); // Limpa a tabela se algo for digitado na busca
-        }
+    $('#nome').on('input', function() {
+        var perfilSelecionado = $('#dropdownMenuLink').text().toLowerCase();
+        var nome = $(this).val();
+        realizarBusca(perfilSelecionado, nome);
     });
 
-    function realizarBusca(perfil) {
+
+    function realizarBusca(perfil, nome) {
         $.ajax({
             url: urlSearchUser,
             method: 'POST',
             data: {
-                perfil: perfil
+                perfil: perfil,
+                nome: nome
             },
             success: function (data) {
                 var table = '<table class="table table-striped">';
-                table += '<thead class="thead-dark"><tr><th>ID</th><th>Nome</th><th>Email</th><th>Data de Nascimento</th><th>Perfil</th></tr></thead>';
+                table += '<thead class="thead-dark"><tr><th>ID</th><th>Nome</th><th>Email</th><th>Data de Nascimento</th><th>Perfil</th><th>editar</th></tr></thead>';
                 table += '<tbody>';
 
                 if (data.length > 0) {
@@ -79,10 +89,11 @@ $(document).ready(function () {
                         table += '<td>' + user.email + '</td>';
                         table += '<td>' + user.data_nascimento + '</td>';
                         table += '<td>' + user.perfil + '</td>';
+                        table += '<td><a href="#" class=" mr-3 text-danger"><i class="fas fa-trash-alt"></i></a>|<a href="#" class="ml-3 text-dark"><i class="fas fa-user-edit"></i></a></td>';
                         table += '</tr>';
                     });
                 } else {
-                    table += '<tr><td colspan="5">Nenhum resultado encontrado</td></tr>';
+                    table += '<tr><td colspan="6">Nenhum resultado encontrado</td></tr>';
                 }
 
                 table += '</tbody></table>';
