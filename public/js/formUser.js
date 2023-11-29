@@ -2,28 +2,21 @@ mascaraCpf($('.cpf'));
 
 mascaraCep($('#cep'));
 
-// $(document).ready(function() {
-//     $('#photo-input').change(function() {
-//         var file = this.files[0];
-//         var reader = new FileReader();
-//
-//         reader.onload = function(e) {
-//             $('#avatar-image').attr('src', e.target.result);
-//         };
-//
-//         if (file) {
-//             reader.readAsDataURL(file);
-//         }
-//     });
-// });
+$('form').submit(function (event) {
+    event.preventDefault();
+    var form = $(this)[0];
+    var formData = new FormData(form);
 
-$('form').submit(function (data) {
-    data.preventDefault();
-    var form = $('form');
+    var fileInput = $('#photo-input')[0].files[0]; // Obtém o arquivo da foto
+    formData.append('foto', fileInput); // Adiciona o arquivo ao FormData
+
     $.ajax({
         type: 'POST',
         url: urlCreateUser,
-        data: form.serialize(),
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
         success: function (response) {
             Swal.fire({
                 position: 'center',
@@ -32,10 +25,7 @@ $('form').submit(function (data) {
                 showConfirmButton: false,
                 timer: 1500
             }).then(() => {
-                const form = document.getElementById('form_user');
-                if (form) {
-                    form.reset();
-                }
+                form.reset();
             });
         },
         error: function (error) {

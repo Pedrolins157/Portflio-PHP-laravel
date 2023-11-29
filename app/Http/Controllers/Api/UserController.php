@@ -30,35 +30,31 @@ class UserController extends Controller
     }
 
     public function create(CreateUserRequest $request)
-    {
-//         $data['foto'] = $request->hasFile('foto');
-//
-//        if ($data != null)
-//        {
-//            $file = $request->file('foto');
-//            $name = time();
-//            $extension = $file->getClientOriginalExtension();
-//            $fileName = $name . '.' . $extension;
-//            $file->move(public_path('img/perfil'), $fileName);
-//        } else {
-//            return 'arquivo não especificado!';
-//        }
-//        $data['senha'] = Hash::make($request->input('senha'));
-//        $user = User::create($data);
-//
-//        return $user;
-        //$fotopath = $request->input('foto');
-        //echo $fotopath;
-        //$fotoPath = $request->hasFile('foto') ? $request->file('foto')->store('img/perfil') : null;
-       // $data = $request->all();
-//        dd($request->file('foto'));
-//
-//        $data['senha'] = Hash::make($request->input('senha'));
-//        $data['foto'] = $fotoPath ;
-//        $user = User::create($data);
-//
-//        return $user;
+{
+    if ($request->hasFile('foto')) {
+        $file = $request->file('foto');
+
+        // Verifica se o arquivo é uma imagem
+        if ($file->isValid() && strpos($file->getMimeType(), 'image') !== false) {
+            $name = time();
+            $extension = $file->getClientOriginalExtension();
+            $fileName = $name . '.' . $extension;
+            $file->move(public_path('img/perfil'), $fileName);
+
+            $data = $request->all();
+            $data['senha'] = Hash::make($request->input('senha'));
+            $data['foto'] = 'img/perfil/' . $fileName; // Caminho para a foto no seu sistema
+            $user = User::create($data);
+
+            return $user;
+        } else {
+            // Arquivo não é uma imagem válida
+            return 'Arquivo inválido! Envie uma imagem válida.';
+        }
+    } else {
+        return 'Arquivo não especificado!';
     }
+}
 
     public function update(UpdateUserRequest $request, User $user)
     {
