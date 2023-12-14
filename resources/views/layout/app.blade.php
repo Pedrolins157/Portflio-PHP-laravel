@@ -28,7 +28,7 @@
 
             <div id="content" class="modo-diurno-body  checked-day-body">
 
-                @include('layout.parte.topbar')
+            @include('layout.parte.topbar', ['user' => $user])
 
                 <div class="container-fluid mb-5">
 

@@ -35,12 +35,17 @@
         </div>
         <li>
         </li>
-        <li class="nav-item dropdown no-arrow  col align-self-end modo-diurno checked-day" style="margin-left:48px;">
+        <li class="nav-item dropdown no-arrow  col align-self-end modo-diurno checked-day" style="margin-left:170px;">
             <a class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none  d-lg-inline  small  ">Olá,
-                    <?php /* echo $_SESSION["nome"] */ ?>
-                </span>
-                <img class="img-profile rounded-circle" src="img/<?php /* echo $_SESSION["foto"]; */ ?>">
+                @if(isset($user) && $user->nome)
+                <span class="mr-2 d-none d-lg-inline small"><b>Olá,   {{ $user->nome }}</b></span>
+                @endif
+                @if($user && $user->foto)
+                <img src="{{ asset($user->foto) }}" alt="Foto de Perfil" style="width:55px;height:55px;border-radius:50%;margin-left:10px;">
+                @else
+                <!-- Caso não haja foto, exibir uma imagem padrão ou mensagem -->
+                <img class="img-profile rounded-circle" src="{{ asset('img/perfil/perfil.png') }}" alt="Foto de Perfil Padrão">
+                @endif
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
