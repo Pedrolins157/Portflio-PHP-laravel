@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sistema de Gerenciamento</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Sistema Erp</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -10,7 +10,10 @@
             <div class="modal-body">Deseja realmente sair do sistema?</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-primary" href="sair.php">Sair</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button  class="btn btn-control btn-danger" type="submit">Sair</button>
+                </form>
             </div>
         </div>
     </div>
@@ -20,7 +23,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-            <img src="img/teste-venda.png" class="mr-2 mt-1" style="width:32px;height:32px;"> <h3 class="modal-title" id="TituloModalCentralizado">Ponto de venda </h3>
+                <img src="img/teste-venda.png" class="mr-2 mt-1" style="width:32px;height:32px;">
+                <h3 class="modal-title" id="TituloModalCentralizado">Ponto de venda </h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -31,15 +35,15 @@
                         Vendedor(a)
                     </div>
                     <div class="col-8">
-                        <input type="text" class="form-control" >
+                        <input type="text" class="form-control">
                     </div>
                 </div>
                 <div class="mt-3 row d-flex justify-content-evenly align-content-center">
                     <div class="col-3 mt-1 p-0 ml-3">
-                        Valor em Caixa 
+                        Valor em Caixa
                     </div>
                     <div class="col-3 p-0">
-                        <input type="number" class="form-control" id="valor" oninput="formatarMoeda(this)" placeholder="00,00" >
+                        <input type="number" class="form-control" id="valor" oninput="formatarMoeda(this)" placeholder="00,00">
                     </div>
                 </div>
             </div>

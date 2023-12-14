@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,34 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->name('/');
-Route::get('teste', function () {
-    return ('pagina-teste');
-});
-Route::prefix('usuario')->group(function () {
-    Route::get('cadastrar', function () {
-        return view('usuario/cadastro-usuario');
-    })->name('usuario.cadastrar');
 
-    Route::get('consultar', function () {
-        return view('usuario/consulta-usuario');
-    })->name('usuario.consultar');
+Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class,'login'])->name('login.auth');
+Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 
-});
-
-Route::prefix('cliente')->group(function () {
-
-    Route::get('cadastrar', function () {
-        return view('cliente/cadastrar-cliente');
-    })->name('cliente.cadastrar');
-
-    Route::get('consultar', function () {
-        return view('cliente/consultar-cliente');
-    })->name('cliente.consultar');
-
-});
-route::get('caixa', function () {
-    return view('caixa/pdv');
-})->name('ponto.de.venda');
+Route::middleware(['auth'])->group(function () {
+  
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::prefix('usuario')->group(function () {
+        Route::get('cadastrar', function () {
+            return view('usuario/cadastro-usuario');
+        })->name('usuario.cadastrar');
+    
+        Route::get('consultar', function () {
+            return view('usuario/consulta-usuario');
+        })->name('usuario.consultar');
+    });
+    
+    Route::prefix('cliente')->group(function () {
+        Route::get('cadastrar', function () {
+            return view('cliente/cadastrar-cliente');
+        })->name('cliente.cadastrar');
+    
+        Route::get('consultar', function () {
+            return view('cliente/consultar-cliente');
+        })->name('cliente.consultar');
+    });
+    
+    Route::get('caixa', function () {
+        return view('caixa/pdv');
+    })->name('ponto.de.venda');
+   
+}); 

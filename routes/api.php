@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 
 Route::prefix('user')->group(function (){
   Route::post('index', [\App\Http\Controllers\Api\UserController::class,'index'])->name('api.users.index');
@@ -34,4 +36,3 @@ Route::prefix('client')->group(function (){
 
 
 
-//vdfsfd.com/api/users/create

@@ -59,15 +59,6 @@ var htmlInventario = `<div class="row card-inventario">
         </nav>
     </div>
 </div>`
-$(document).ready(function () {
-    $('#inventario').click(function () {
-        //$('#local-trabalho').html(htmlInventario) ;
-        $.ajax({
-            method: "POST",
-            url: "consulta-inventario.php",
-        });
-    });
-});
 
 $(document).ready(function () {
     // Verificar o estado no localStorage e aplicar classes correspondentes
@@ -161,11 +152,11 @@ function mascaraCep(element) {
     });
 }
 
-    // mascara uf
-    $('#uf').on('input', function () {
-        var value = $(this).val().toUpperCase(); // Converte para maiúsculas
-        if (value.length > 2) {
-            value = value.substring(0, 2); // Limita a 2 letras
-        }
-        $(this).val(value); // Atualiza o valor no campo
-    });
+// mascara uf
+$('#uf').on('input', function () {
+    var value = $(this).val().toUpperCase(); // Converte para maiúsculas
+    if (value.length > 2) {
+        value = value.substring(0, 2); // Limita a 2 letras
+    }
+    $(this).val(value); // Atualiza o valor no campo
+});

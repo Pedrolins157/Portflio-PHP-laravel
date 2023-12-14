@@ -7,14 +7,14 @@
         @csrf
         <div class="container">
             <div class="row mb-4 mx-auto">
-                <input type="file" id="photo-input" name="foto"  accept="jpg,jpeg,png">
-{{--                <div class="box col-12" style="margin-top: 100px">--}}
-{{--                    <label class="avatar avatar01" for="photo-input">--}}
-{{--                        <img id="avatar-image" src="img/perfil-usuario.jpg" style="width: 150px; left: 150px;" alt="Avatar">--}}
-{{--                    </label>--}}
-{{--                  --}}
+                <input type="file" id="photo-input" name="foto" accept="jpg,jpeg,png">
+                <div class="box col-12" style="margin-top: 100px">
+                    <label class="avatar avatar01" for="photo-input">
+                        <img id="avatar-image" src="img/perfil-usuario.jpg" style="width: 150px; left: 150px;" alt="Avatar">
+                    </label>
 
-{{--                </div>--}}
+
+                </div>
                 <!-- <input type="file" name="foto" placeholder="foto perfil" class="form-control-file mb-2 mt-1" accept="png,jpg,jpeg"> -->
 
             </div>
@@ -44,7 +44,7 @@
                     <spam id="errologin"></spam>
                 </div>
                 <div class="col-md-4">
-                    <input type="password" placeholder="Senha" class="form-control" name="senha">
+                    <input type="password" placeholder="Senha" class="form-control" name="password">
                 </div>
                 <div class="col-md-4">
                     <select name="perfil" id="" class="form-control ">
@@ -65,5 +65,7 @@
 
 
 </div>
-<script>urlCreateUser = '{{ route("api.users.create") }}';</script>
+<script>
+    urlCreateUser = '{{ route("api.users.create") }}';
+</script>
 <script src="{{url('js/formUser.js')}}"></script>

@@ -45,7 +45,7 @@ class CreateUserRequest extends FormRequest
             'cpf' => 'required|string|size:11|unique:users',
             'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'login' => 'required|string|max:30|unique:users',
-            'senha' => 'required|string|min:8',
+            'password' => 'required|string|min:8',
             'perfil' => 'required|in:adm,user',
         ];
     }
@@ -66,8 +66,8 @@ class CreateUserRequest extends FormRequest
             'login.required' => 'O campo login é obrigatório.',
             'login.max' => 'O login não deve ter mais de 30 caracteres.',
             'login.unique' => 'Este login já está em uso.',
-            'senha.required' => 'O campo senha é obrigatório.',
-            'senha.min' => 'A senha deve ter pelo menos 8 caracteres.',
+            'password.required' => 'O campo senha é obrigatório.',
+            'password.min' => 'A senha deve ter pelo menos 8 caracteres.',
             'perfil.required' => 'O campo perfil é obrigatório.',
             'perfil.in' => 'O perfil deve ser "adm" ou "user".',
         ];

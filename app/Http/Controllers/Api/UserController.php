@@ -31,6 +31,10 @@ class UserController extends Controller
 
     public function create(CreateUserRequest $request)
 {
+
+       
+
+
     if ($request->hasFile('foto')) {
         $file = $request->file('foto');
 
@@ -42,7 +46,7 @@ class UserController extends Controller
             $file->move(public_path('img/perfil'), $fileName);
 
             $data = $request->all();
-            $data['senha'] = Hash::make($request->input('senha'));
+            $data['password'] = Hash::make($request->input('password'));
             $data['foto'] = 'img/perfil/' . $fileName; // Caminho para a foto no seu sistema
             $user = User::create($data);
 

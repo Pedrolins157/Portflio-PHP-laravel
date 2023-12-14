@@ -4,7 +4,7 @@
     </button>
     <ul class="navbar-nav ml-4 row">
         <li href="" class="nav-item dropdown no-arrow ml-2   navbar-efect">
-            <a href="{{route('ponto.de.venda')}}" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button" data-toggle="modal" data-target="#ExemploModalCentralizado"><img src="img/ponto-venda.png" class="mr-2" style="width:32px;height:32px;"> Ponto de venda 
+            <a href="{{route('ponto.de.venda')}}" class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a " id="userDropdown" role="button" data-toggle="modal" data-target="#ExemploModalCentralizado"><img src="img/ponto-venda.png" class="mr-2" style="width:32px;height:32px;"> Ponto de venda
             </a>
         </li>
 
@@ -44,14 +44,11 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="sair.php">
-                    <i class="fas fa-user-cog mr-2 text-gray-400"></i>
-                    Alterar usuário
-                </a>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Sair
                 </a>
+
             </div>
         </li>
     </ul>

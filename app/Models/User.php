@@ -16,7 +16,7 @@ class User extends Model
         'cpf',
         'foto',
         'login',
-        'senha',
+        'password',
         'perfil',
     ];
 
