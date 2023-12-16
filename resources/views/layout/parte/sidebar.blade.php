@@ -27,43 +27,22 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
            aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-user-cog"></i>
-            <span>Usuários</span>
+            <span>Cadastros</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">O que deseja fazer ?</h6>
 
-                <?php /*if ($_SESSION["perfil"] === "adm") { */?> 
-                 <a class="collapse-item load-page" href="{{route('usuario.cadastrar')}}">Cadastrar 
-                    Usuário</a><?php /*}*/ ?>
-                <?php /* if ($_SESSION["perfil"] === "adm") { ?> <a class="collapse-item" href="listar-usuarios.php">Listar
-                    Usuários</a><?php }*/ ?>
-                    
-                <a class="collapse-item load-page" href="{{route('usuario.consultar')}}">Consultar Usuários</a>
-
+               
+                 <a class="collapse-item load-page" href="{{route('usuario.cadastrar')}}">Cadastro de funcionários</a>
+                 <a class="collapse-item load-page" href="{{route('cliente.cadastrar')}}">Cadastro de Clientes</a>
+                 <!-- <a class="collapse-item load-page" href="{{route('usuario.consultar')}}">Consultar cadastro</a> -->
+                 <a class="collapse-item load-page" href="{{route('cliente.consultar')}}">Consultar Clientes</a>
 
             </div>
         </div>
     </li>
 
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-           aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-users"></i>
-
-            <span>Clientes</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-             data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">O que deseja fazer ?</h6>
-                <a class="collapse-item load-page" href="{{route('cliente.cadastrar')}}">Cadastrar Cliente</a>
-                <a class="collapse-item load-page" href="{{route('cliente.consultar')}}">Consultar Clientes</a>
-            </div>
-        </div>
-    </li>
 
 
     <hr class="sidebar-divider d-none d-md-block">

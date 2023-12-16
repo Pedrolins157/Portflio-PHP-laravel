@@ -35,6 +35,38 @@ $('form').submit(function (event) {
 
     return false;
 });
+ //checked password
+ function verificarSenha() {
+    $('#primary-password, .check-password').on('keyup', function() {
+        let password = $('#primary-password').val();
+        let checkedPassword = $('.check-password').val();
+
+        let senhasDiferentes = password !== checkedPassword;
+   
+        $('#btn-cadastrar-usuario').prop('disabled', senhasDiferentes ? true : false);
+  
+        $('#span-erro').toggleClass('d-flex', senhasDiferentes);
+        $('#primary-password, .check-password').toggleClass('span-erro-border', senhasDiferentes);
+    });
+}
+
+
+ //show password 
+ $(document).ready(function() {
+    $('#showPassword').click(function() {
+        let passwordField = $('#primary-password');
+        let fieldType = passwordField.attr('type');
+        let isPasswordField = fieldType === 'password';
+
+        passwordField.attr('type', isPasswordField ? 'text' : 'password');
+        $(this).removeClass(isPasswordField ? 'fa-lock' : 'fa-lock-open').addClass(isPasswordField ? 'fa-lock-open' : 'fa-lock');
+        $(this).toggleClass('rotateIcon', isPasswordField);
+    });
+});
+
+    
+
+
 $(document).ready(function () {
     $('.dropdown-item').on('click', function () {
         var perfilSelecionado = $(this).text().toLowerCase();

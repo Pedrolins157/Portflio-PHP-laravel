@@ -7,7 +7,7 @@
         @csrf
         <div class="container">
             <div class="row mb-4 mx-auto">
-                <input type="file" id="photo-input" name="foto" accept="jpg,jpeg,png">
+                <input class="d-none" type="file" id="photo-input" name="foto" accept="jpg,jpeg,png">
                 <div class="box col-12" style="margin-top: 100px">
                     <label class="avatar avatar01" for="photo-input">
                         <img id="avatar-image" src="img/perfil-usuario.jpg" style="width: 150px; left: 150px;" alt="Avatar">
@@ -20,7 +20,7 @@
             </div>
             <p class="h5 d-flex align-items-center justify-content-center "><b><i class=" far fa-images"></i> Adicionar Foto </b></p>
             <div class="row">
-                <p class="h5  mt-3 text-gray-800 ml-3">Dados do Usuário</p>
+                <p class="h5  mt-3 text-gray-800 ml-3">Dados do Funcionário</p>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -43,8 +43,18 @@
                     <input name="login" id="login" placeholder="login" class="form-control mb-2">
                     <spam id="errologin"></spam>
                 </div>
+                <div class="row col-md-4">
+                    <div class="col-10">
+                        <input style="width:136%;" type="password" placeholder="Senha" class="form-control " name="password" id="primary-password" onchange="verificarSenha()">
+                    </div>
+                <div class="col-2">
+                <i style="margin-top:10px;" id="showPassword" class="fas fa-lock mr-5 d-flex justify-content-start  "></i>
+
+                </div>
+                </div>
                 <div class="col-md-4">
-                    <input type="password" placeholder="Senha" class="form-control" name="password">
+                    <input type="password" placeholder="confirme senha" class="form-control check-password "  onchange="verificarSenha()">
+                    <span class="text-danger ml-2 d-none" id="span-erro"><b>  Senhas não coincidem! </b></span>
                 </div>
                 <div class="col-md-4">
                     <select name="perfil" id="" class="form-control ">

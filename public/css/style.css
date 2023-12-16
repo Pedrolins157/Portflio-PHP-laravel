@@ -16,6 +16,17 @@
     cursor: pointer;
     top: 8px;
 }
+.span-erro-border{
+    border: solid 1px red!important;
+}
+
+.fa-lock-open {
+    transform: rotate(2deg); /* Ângulo final do cadeado aberto */
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+
+
+
 .modo-noturno {
     background-color: #141824;
     color: #f7f4f4!important;
