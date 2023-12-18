@@ -24,7 +24,13 @@
     transform: rotate(2deg); /* Ângulo final do cadeado aberto */
     transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
 }
-
+.fa-lock:hover{
+    cursor: pointer;
+}
+.modal-pdv{
+ border-radius: 30px!important;
+ border: none!important; 
+}
 
 
 .modo-noturno {
@@ -70,8 +76,70 @@ color:rgb(97, 92, 92)!important;
 }
 .btn-cadastrar-usuario{
     background-image: linear-gradient(to right, #002c62, #4300a8a6);
+    border-radius: 10px!important;
    
+
+
 }
+.button-pdv-cancel{
+    display: inline-block;
+    border-radius: 14px;
+    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 90px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+
+}
+
+.button-pdv {
+    display: inline-block;
+    border-radius: 14px;
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 141px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+   
+   .button-pdv span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .button-pdv span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+   
+   .button-pdv:hover span {
+    padding-right: 15px;
+   }
+   
+   .button-pdv:hover span:after {
+    opacity: 1;
+    right: 0;
+   }
+
+
+
+
 .input-pdv{
     height: 30px;
 }

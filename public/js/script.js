@@ -96,14 +96,25 @@ $('.load-page').click(function () {
     return false;
 });
 
-function formatarMoeda(input) {
-    // Remove caracteres não numéricos
-    input.value = input.value.replace(/\D/g, "");
 
-    // Formata o valor para o formato de moeda (00,00)
-    input.value = input.value.replace(/(\d{2})(\d{2})$/, "$1,$2");
+$(document).ready(function () {
+    mascaraReal($('#valor'));
+});
+function mascaraReal(element) {
+    //mascara moedal
+    element.on('input', function () {
+        var value = $(this).val().replace(/\D/g, '');
+        var numberValue = parseInt(value) / 100;
+
+        var options = {
+            style: 'currency',
+            currency: 'BRL'
+        };
+
+        var formattedValue = numberValue.toLocaleString('pt-BR', options);
+        $(this).val(formattedValue);
+    });
 }
-// cadastramento de Usuário
 
 
 function mascaraCpf(element) {

@@ -22,7 +22,37 @@ class CreateUsersTable extends Migration
             $table->string('foto', 255);
             $table->string('login', 30)->unique();
             $table->char('password', 255);
-            $table->enum('perfil', ['adm', 'user']);
+            $table->enum('perfil', [
+                'gerente_geral',
+                'gerente_loja',
+                'gerente_departamento',
+                'gerente_recursos_humanos',
+                'gerente_vendas',
+                'gerente_financeiro',
+                'gerente_marketing',
+                'atendente_balcao',
+                'atendente_caixa',
+                'assistente_vendas',
+                'consultor_vendas',
+                'estoquista',
+                'auxiliar_estoque',
+                'analista_logistica',
+                'coordenador_logistica',
+                'operador_maquinas',
+                'auxiliar_producao',
+                'auxiliar_limpeza',
+                'analista_suporte',
+                'desenvolvedor_software',
+                'administrador_redes',
+                'analista_marketing',
+                'designer_grafico',
+                'coordenador_marketing',
+                'assistente_administrativo',
+                'recepcionista',
+                'contador',
+                'seguranca',
+                'estagiario'
+            ]);
             $table->timestamps();
         });
     }

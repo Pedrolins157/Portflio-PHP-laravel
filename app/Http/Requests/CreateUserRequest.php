@@ -46,7 +46,8 @@ class CreateUserRequest extends FormRequest
             'foto' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'login' => 'required|string|max:30|unique:users',
             'password' => 'required|string|min:8',
-            'perfil' => 'required|in:adm,user',
+            'perfil' => 'required|in:gerente_geral,gerente_loja,gerente_departamento,gerente_recursos_humanos,gerente_vendas,gerente_financeiro,gerente_marketing,atendente_balcao,atendente_caixa,assistente_vendas,consultor_vendas,estoquista,auxiliar_estoque,analista_logistica,coordenador_logistica,operador_maquinas,auxiliar_producao,auxiliar_limpeza,analista_suporte,desenvolvedor_software,administrador_redes,analista_marketing,designer_grafico,coordenador_marketing,assistente_administrativo,recepcionista,contador,seguranca,estagiario',
+
         ];
     }
     public function messages()
@@ -69,7 +70,7 @@ class CreateUserRequest extends FormRequest
             'password.required' => 'O campo senha é obrigatório.',
             'password.min' => 'A senha deve ter pelo menos 8 caracteres.',
             'perfil.required' => 'O campo perfil é obrigatório.',
-            'perfil.in' => 'O perfil deve ser "adm" ou "user".',
+            'perfil.in' => ' Que coisa não?',
         ];
     }
 }

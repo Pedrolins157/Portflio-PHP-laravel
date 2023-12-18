@@ -2,6 +2,18 @@ mascaraCpf($('.cpf'));
 
 mascaraCep($('#cep'));
 
+document.getElementById('photo-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        document.getElementById('avatar-image').setAttribute('src', e.target.result);
+    };
+
+    reader.readAsDataURL(file);
+});
+
+
 $('form').submit(function (event) {
     event.preventDefault();
     var form = $(this)[0];
@@ -37,7 +49,7 @@ $('form').submit(function (event) {
 });
  //checked password
  function verificarSenha() {
-    $('#primary-password, .check-password').on('keyup', function() {
+    $('#primary-password, .check-password,#password-pdv').on('keyup', function() {
         let password = $('#primary-password').val();
         let checkedPassword = $('.check-password').val();
 
@@ -54,7 +66,7 @@ $('form').submit(function (event) {
  //show password 
  $(document).ready(function() {
     $('#showPassword').click(function() {
-        let passwordField = $('#primary-password');
+        let passwordField = $('#primary-password ,#password-pdv');
         let fieldType = passwordField.attr('type');
         let isPasswordField = fieldType === 'password';
 
