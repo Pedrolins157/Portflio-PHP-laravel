@@ -17,8 +17,6 @@
 
 
                 </div>
-                <!-- <input type="file" name="foto" placeholder="foto perfil" class="form-control-file mb-2 mt-1" accept="png,jpg,jpeg"> -->
-
             </div>
             <p class="h5 d-flex align-items-center justify-content-center "><b><i class=" far fa-images"></i> Adicionar
                     Foto </b></p>
@@ -27,40 +25,45 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" name="nome" placeholder="Nome" class="form-control mb-2 required">
+                    <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control mb-2 required">
+                    <div class="error-message" id="error-nome"></div>
                 </div>
                 <div class="col-md-6">
-                    <input type="text" name="email" placeholder="E-mail" class="form-control mb-2">
+                    <input type="text" name="email" id="email" placeholder="E-mail" class="form-control mb-2">
+                    <div class="error-message" id="error-email"></div>
+                    
                 </div>
 
                 <div class="col-md-4">
-                    <input type="date" name="data_nascimento" id="data" placeholder="Data de Nascimento"
-                        class="form-control mb-2">
+                    <input type="date" name="data_nascimento" id="data_nascimento" placeholder="Data de Nascimento" class="form-control mb-2">
+                    <div class="error-message" id="error-email"></div>
                 </div>
                 <div class="col-md-4">
 
                     <input type="text" name="cpf" id="cpf" class="cpf form-control mb-2" placeholder="Cpf">
-                    <spam id="errocpf"></spam>
+                    <div class="error-message" id="error-cpf"></div>
+
 
                 </div>
                 <div class="col-md-4">
                     <input name="login" id="login" placeholder="login" class="form-control mb-2">
-                    <spam id="errologin"></spam>
+                    <div class="error-message" id="error-login"></div>
                 </div>
                 <div class="row col-md-4">
                     <div class="col-10">
-                        <input style="width:136%;" type="password" placeholder="Senha" class="form-control "
-                            name="password" id="primary-password" onchange="verificarSenha()">
+                        <input style="width:136%;" type="password" placeholder="Senha" class="form-control " name="password" id="password" onchange="verificarSenha()">
+                        <div class="error-message" id="error-password"></div>
                     </div>
                     <div class="col-2">
-                        <i style="margin-top:10px;" id="showPassword" class="fas fa-lock mr-5 d-flex justify-content-start  "></i>
+                        <i style="margin-top:10px;" id="showPassword"
+                            class="fas fa-lock mr-5 d-flex justify-content-start  "></i>
 
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <input type="password" placeholder="confirme senha" class="form-control check-password "
-                        onchange="verificarSenha()">
-                    <span class="text-danger ml-2 d-none" id="span-erro"><b> Senhas não coincidem! </b></span>
+                    <input i type="password" placeholder="confirme senha" class="form-control check-password " onchange="verificarSenha()">
+                        <div class="error-message" id="error-password"></div>
+                    <span class="text-danger ml-2 d-none" id="span-erro"> Senhas não coincidem!</span>
                 </div>
                 <div class="col-md-4">
                     <select name="perfil" id="perfil" class="form-control">
@@ -123,6 +126,7 @@
                             <option value="estagiario">Estagiário</option>
                         </optgroup>
                     </select>
+                    <div class="error-message" id="error-perfil"></div>
                 </div>
 
             </div>

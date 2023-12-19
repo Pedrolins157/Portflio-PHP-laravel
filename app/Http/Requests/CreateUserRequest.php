@@ -60,7 +60,7 @@ class CreateUserRequest extends FormRequest
             'data_nascimento.required' => 'A data de nascimento é obrigatória.',
             'data_nascimento.date' => 'A data de nascimento deve ser uma data válida.',
             'cpf.required' => 'O campo CPF é obrigatório.',
-            'cpf.size' => 'O CPF deve ter 14 caracteres.',
+            'cpf.size' => 'O CPF deve ter 11 caracteres.',
             'cpf.unique' => 'Este CPF já está em uso.',
             'foto.max' => 'A foto não deve ter mais de 255 caracteres.',
             'foto.required' => 'Foto não selecionada.',

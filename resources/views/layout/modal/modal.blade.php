@@ -34,38 +34,42 @@
                 </button>
             </div>
             <div class="modal-body modal-pdv ml-4">
-                <div class="row d-flex justify-content-evenly align-content-center">
-                    <div class="col-3 mt-1">
-                        Funcionário(a)
+                <form action="{{ route('ponto.de.venda') }}" method="POST">
+                    @csrf
+                    <div class="row d-flex justify-content-evenly align-content-center">
+                        <div class="col-3 mt-1">
+                            Funcionário(a)
+                        </div>
+                        <div class="col-8 mb-2">
+                            <input type="text" class="form-control" name="login">
+                        </div>
+
                     </div>
-                    <div class="col-8 mb-2">
-                        <input type="text" class="form-control">
+                    <div class="row d-flex justify-content-evenly align-content-center">
+                        <div class="col-3 mt-1">
+                            Senha :
+                        </div>
+                        <div class="row col-8">
+                            <div class="col-6">
+                                <input id="password-pdv" type="password" class="form-control " style="width:150%;"
+                                    name="password">
+                            </div>
+                            <div class="col-1">
+                                <i style="margin-top:10px;" id="showPasswordPdv"
+                                    class="fas fa-lock mr-5 d-flex justify-content-start  "></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-3 row d-flex justify-content-evenly align-content-center">
+                        <div class="col-3 mt-1 p-0 ml-3">
+                            Valor em Caixa
+                        </div>
+                        <div class="col-3 p-0">
+                            <input type="text" class="form-control" id="valor" placeholder="R$ 0,00" name="valorCaixa">
+                        </div>
                     </div>
 
-                </div>
-                <div class="row d-flex justify-content-evenly align-content-center">
-                    <div class="col-3 mt-1">
-                        Senha :
-                    </div>
-                    <div class="row col-8">
-                        <div class="col-6">
-                            <input id="password-pdv" type="password" class="form-control " style="width:150%;">
-                        </div>
-                        <div class="col-1">
-                            <i style="margin-top:10px;" id="showPasswordPdv"
-                                class="fas fa-lock mr-5 d-flex justify-content-start  "></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="mt-3 row d-flex justify-content-evenly align-content-center">
-                    <div class="col-3 mt-1 p-0 ml-3">
-                        Valor em Caixa
-                    </div>
-                    <div class="col-3 p-0">
-                        <input type="text" class="form-control" id="valor" placeholder="R$ 0,00">
-                    </div>
-                </div>
             </div>
             <div class="modal-footer modal-pdv">
                 <div>
@@ -73,15 +77,15 @@
                 </div>
 
                 <div>
-                    <button type="button" class="button-pdv efeito"><span>Iniciar caixa</span></button>
+                    <button type="submit" class="button-pdv efeito"><span>Iniciar caixa</span></button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-
     $('#showPasswordPdv').click(function () {
         let passwordField = $('#password-pdv');
         let fieldType = passwordField.attr('type');

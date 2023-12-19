@@ -34,5 +34,5 @@ Route::prefix('client')->group(function (){
   Route::delete('delete/{id}', [\App\Http\Controllers\Api\ClientController::class,'delete'])->name('api.clients.delete');
 });
 
-
+// Route::post('/caixa', [\App\Http\Controllers\Api\LoginController::class,'LoginPdv'])->name('api.ponto.de.venda');
 

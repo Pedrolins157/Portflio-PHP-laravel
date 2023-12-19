@@ -2,11 +2,11 @@ mascaraCpf($('.cpf'));
 
 mascaraCep($('#cep'));
 
-document.getElementById('photo-input').addEventListener('change', function(event) {
+document.getElementById('photo-input').addEventListener('change', function (event) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
-    reader.onload = function(e) {
+    reader.onload = function (e) {
         document.getElementById('avatar-image').setAttribute('src', e.target.result);
     };
 
@@ -38,35 +38,50 @@ $('form').submit(function (event) {
                 timer: 1500
             }).then(() => {
                 form.reset();
+                reader.readAsDataURL(file).reset();
             });
         },
         error: function (error) {
-            console.log(error);
+            if (error.responseJSON && error.responseJSON.errors) {
+                var errors = error.responseJSON.errors;
+
+                // Iterar pelos erros recebidos
+                Object.keys(errors).forEach(function (key) {
+                    var errorMessage = errors[key].join(' '); // Juntar mensagens de erro, se houver várias
+                    var inputElement = $('#' + key);
+                    inputElement.siblings('.error-message').text(errorMessage);
+                    inputElement.addClass('red-border');
+                    inputElement.on('focus', function () {
+                        $(this).removeClass('red-border');
+                        inputElement.siblings('.error-message').text('');
+                    });
+                });
+            }
         }
     });
 
     return false;
 });
- //checked password
- function verificarSenha() {
-    $('#primary-password, .check-password,#password-pdv').on('keyup', function() {
-        let password = $('#primary-password').val();
+//checked password
+function verificarSenha() {
+    $('#password, .check-password,#password-pdv').on('keyup', function () {
+        let password = $('#password').val();
         let checkedPassword = $('.check-password').val();
 
         let senhasDiferentes = password !== checkedPassword;
-   
+
         $('#btn-cadastrar-usuario').prop('disabled', senhasDiferentes ? true : false);
-  
+
         $('#span-erro').toggleClass('d-flex', senhasDiferentes);
-        $('#primary-password, .check-password').toggleClass('span-erro-border', senhasDiferentes);
+        $('#password, .check-password').toggleClass('span-erro-border', senhasDiferentes);
     });
 }
 
 
- //show password 
- $(document).ready(function() {
-    $('#showPassword').click(function() {
-        let passwordField = $('#primary-password ,#password-pdv');
+//show password 
+$(document).ready(function () {
+    $('#showPassword').click(function () {
+        let passwordField = $('#password ,#password-pdv');
         let fieldType = passwordField.attr('type');
         let isPasswordField = fieldType === 'password';
 
@@ -76,7 +91,7 @@ $('form').submit(function (event) {
     });
 });
 
-    
+
 
 
 $(document).ready(function () {
@@ -91,11 +106,11 @@ $(document).ready(function () {
         } else if (perfilSelecionado === 'administrador') {
             perfilSelecionado = ('adm');
             realizarBusca(perfilSelecionado);
-        } else  {
-            realizarBusca( '');
+        } else {
+            realizarBusca('');
         }
     });
-    $('#nome').on('input', function() {
+    $('#nome').on('input', function () {
         var perfilSelecionado = $('#dropdownMenuLink').text().toLowerCase();
         var nome = $(this).val();
         realizarBusca(perfilSelecionado, nome);

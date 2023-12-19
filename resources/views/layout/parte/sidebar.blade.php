@@ -32,11 +32,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">O que deseja fazer ?</h6>
-
-               
                  <a class="collapse-item load-page" href="{{route('usuario.cadastrar')}}">Cadastro de funcionários</a>
                  <a class="collapse-item load-page" href="{{route('cliente.cadastrar')}}">Cadastro de Clientes</a>
-                 <!-- <a class="collapse-item load-page" href="{{route('usuario.consultar')}}">Consultar cadastro</a> -->
+                 <a class="collapse-item load-page" href="{{route('usuario.consultar')}}">Consultar cadastro</a>
                  <a class="collapse-item load-page" href="{{route('cliente.consultar')}}">Consultar Clientes</a>
 
             </div>

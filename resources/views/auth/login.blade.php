@@ -36,7 +36,7 @@
                                     <form  action="{{route('login.auth')}}" method="POST">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" required name="email" class="form-control form-control-user"  aria-describedby="emailHelp" placeholder="Digite seu email">
+                                            <input type="text" required name="login" class="form-control form-control-user"  aria-describedby="emailHelp" placeholder="Digite seu login">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" required name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Digite sua senha">

@@ -38,10 +38,10 @@
         <li class="nav-item dropdown no-arrow  col align-self-end modo-diurno checked-day" style="margin-left:170px;">
             <a class="nav-link efeito dropdown-toggle text-gray-800 checked-day-a" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 @if(isset($user) && $user->nome)
-                <span class="mr-2 d-none d-lg-inline small"><b>Olá,   {{ $user->nome }}</b></span>
+                <span class="mr-2 d-none d-lg-inline small"><b>Olá, Sr(a)   {{ $user->nome }}</b></span>
                 @endif
                 @if($user && $user->foto)
-                <img src="{{ asset($user->foto) }}" alt="Foto de Perfil" style="width:55px;height:55px;border-radius:50%;margin-left:10px;">
+                <img src="{{ asset($user->foto) }}" alt="Foto de Perfil" style="width:55px;height:55px;border-radius:50%;margin-left:10px;box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;">
                 @else
                 <!-- Caso não haja foto, exibir uma imagem padrão ou mensagem -->
                 <img class="img-profile rounded-circle" src="{{ asset('img/perfil/perfil.png') }}" alt="Foto de Perfil Padrão">
