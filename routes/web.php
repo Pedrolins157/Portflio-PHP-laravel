@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::prefix('usuario')->group(function () {
+ 
         Route::get('cadastrar', function () {
             return view('usuario/cadastro-usuario');
         })->name('usuario.cadastrar');
@@ -41,9 +42,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('consultar', function () {
             return view('usuario/consulta-usuario');
         })->name('usuario.consultar');
+ 
     });
 
     Route::prefix('cliente')->group(function () {
+ 
         Route::get('cadastrar', function () {
             return view('cliente/cadastrar-cliente');
         })->name('cliente.cadastrar');
@@ -51,11 +54,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('consultar', function () {
             return view('cliente/consultar-cliente');
         })->name('cliente.consultar');
+ 
     });
 
-    //pondo de venda 
+    Route::prefix('inventario')->group(function (){
+ 
+        Route::get('produto', function(){
+            return view('inventario/produto');
+        })->name('inventario.produto'); 
+ 
+    });
 
-    
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 });

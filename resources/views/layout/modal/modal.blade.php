@@ -1,19 +1,20 @@
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sistema Erp</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+        <div class="modal-content" style="border-radius:15px;">
+            <div class="modal-header" style="border-bottom:none;">
+
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-sign-out-alt mr-2 text-danger"></i>Sistema Erp</h5>
+                <button class="close efeito" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="">×</span>
                 </button>
             </div>
-            <div class="modal-body">Deseja realmente sair do sistema?</div>
-            <div class="modal-footer ">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <div class="modal-body h5 d-flex align-content-center justify-content-center"><b>Deseja realmente sair do sistema?</b></div>
+            <div class="modal-footer " style="border-top:none;">
+                <button class="btn btn-secondary efeito" type="button" data-dismiss="modal"  style="border-radius:13px;">Cancelar</button>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button class="btn btn-control btn-danger" type="submit">Sair</button>
+                    <button class="btn btn-control btn-danger efeito" type="submit" style="border-radius:13px;">Sair</button>
                 </form>
             </div>
         </div>
