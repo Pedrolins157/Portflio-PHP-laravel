@@ -13,7 +13,7 @@
             <div class="col-4">
                  <input type="text" class="form-control d-flex justify-content-center align-content-center" Placeholder="Nome do produto">
                  <select name="" id="">
-                    
+                    <option value=""></option>
                  </select>
             </div>
         </div>
